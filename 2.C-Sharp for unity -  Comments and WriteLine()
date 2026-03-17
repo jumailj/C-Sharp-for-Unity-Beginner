@@ -1,0 +1,132 @@
+
+###  Introducing Comments
+
+Comments are an extremely useful tool, but i also don't' want to overemphasize them. You'll write a lot more "normal" code then you do comments. But they're convenient for leaving notes for yourself or other programmers in the code.
+
+**What is a comment?** 
+At its core a comment is text put into the code for a human to read that is completely ignored by the computer.
+
+**Why should i Use comments?** 
+There are a handful of uses for comments.
+
+- **To Summarize:** Use comments to explain what a chunk of code does so you don't forget later.
+    
+- **To Explain "Why":** Use comments to explain the reason behind your logic if the code isn't obvious.
+    
+- **To Test Code:** "Comment out" a line to temporarily disable it without deleting it.
+
+
+_You should also add appropriate comments to summarize and elaborate to assist with helping you or others understand what it does and why it was done that way. When you're been away from some code for a few weeks, you won't remember what it did, and comments can speed up the process of figuring it out_
+
+
+**1) Single -Line Comments (//)** 
+The most common way to comment. Anything following the two slashes on the line is ignored. 
+- **Standalone**: Place them on their own line to describe the code following it.
+- **inline** : Place them at the end of a line of code to provide a quick note
+
+```C# 
+// this describes the new line 
+Console.WriteLine("Hello, World");
+
+Console.WriteLine("Hi!");  // This is an inline comment.
+```
+
+**2) Multi-Line / Block Comments ( `/* ... */`)** 
+used to wrap large chucks of text or to "comment out" sections of code during testing. 
+- starts with `/*` and ends with `*/` 
+- can span as many lines as needed.
+- Note : while available, many C# developers prefer using multiple `//` lines instead, as `/* */` is holdover for older language like C
+
+```C#
+/* This is a multi-line comment.
+   It spans multiple lines.
+   It is useful for long explanations. */
+
+// Many prefer this style for multi-line:
+// Line one
+// Line two
+```
+
+
+**3) XML Documentation Comments (`///`)** 
+There are specialized comment used to generate technical documentation automatically. 
+- They start with three slashes.
+- They are typically used above functions, classes, or methods to describe parameters and return types.
+  
+_* it will be covered in more details as you reach advanced topics_   (todo: teach this topic)
+```c# 
+/// <summary>
+/// This method calculates the sum of two integers.
+/// </summary>
+/// <param name="a">The first number to add.</param>
+/// <param name="b">The second number to add.</param>
+/// <returns>The total sum of a and b.</returns>
+public int AddNumbers(int a, int b)
+{
+    return a + b;
+}
+```
+
+
+---
+### The `Console.WriteLine()` Method 
+
+It is a built in instruction used to send information from your code to the **Console window** (the text-based screen). its primary job is to "output" data so the human user can see what the program is doing. 
+
+```c#
+Console.WriteLine("HelloWorld!");
+```
+
+**Why do we need to use it?** 
+In programming, if the computer does a calculation but doesn't show you the result, it's like a tree falling in a forest with no one around. We use `WriteLine` for: 
+
+1. **Communication**: Telling the user what to do ("Please enter your name").
+2. **Debugging**: Checking if your code is working correctly by printing values as different steps.
+3. **Visualizing Logic**: Seeing the result of a math problem or a game's score.
+   
+**teach students main class when teach them the classes**
+
+**The `Console.WriteLine()` Method**
+
+- **`Console`**: This is a **Class** (a collection of tools) provided by .NET.
+    
+- **`WriteLine`**: This is a **Method** (an action). It tells the computer: _"Put this text on the screen and then move the cursor to the next line."_
+	
+- `(...) Arguments` : These parentheses hold the "ingredients" the method needs. For `WriteLine` it needs the text you want to show.
+    
+- **The Semicolon `;`**: Remind them of your **Life Cycle** notes—if the semicolon is missing, the **Syntax Analysis** will fail, and the build will stop!
+
+
+**`Write` vs. `WriteLine`** 
+
+- `Console.WriteLine("Hello");`: Prints "Hello" and jumps to a new line.
+    
+- `Console.Write("Hello");`: Prints "Hello" but stays on the same line.
+
+```c#
+Console.WriteLine("Hello World!");
+
+Console.Write("--- System Info ---\n");
+
+Console.Write("Platform\t");
+Console.WriteLine("\".NET 8.0 \"");
+
+Console.Write("Langauge:\t");
+Console.WriteLine("\"C#\" ");
+
+Console.Write("---------------\n");
+
+Console.WriteLine("""
+.NET Component Info 
+    The Compiler is "Roslyn"
+    The RunTime is "CLR"
+""");
+
+// string cocatenation
+Console.WriteLine("--- System Clock ---");
+Console.WriteLine("Time: " + "08" + ":" + "30" + " PM");
+Console.WriteLine("----------");
+
+
+```
+
