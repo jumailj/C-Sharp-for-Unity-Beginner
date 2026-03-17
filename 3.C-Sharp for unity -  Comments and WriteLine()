@@ -67,6 +67,23 @@ public int AddNumbers(int a, int b)
 }
 ```
 
+**How to make good comments** 
+Commenting your code is easy; making _good_ comments is a little trickier. For starters, you should comment your code soon after you write it, rather than much later. A few days or a weekend away from the code, and you may no longer really remember what you were doing with it. (Trust me, it happens!)
+
+second, write comments that add value to the code. Here's a bad example of a comment for a line of code. 
+```c# 
+//set the score to 0
+score = 0;
+```
+
+Everything the comment says, we already knew here's a better example.
+```c# 
+//resets the score to 0 because the game is starting over.
+score = 0
+```
+
+_You don't need a comment for every line of code, but having one for every section of related code is helpful_ 
+
 
 ---
 ### The `Console.WriteLine()` Method 
